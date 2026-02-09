@@ -13,6 +13,7 @@ const logout = () => {
   window.location.href = "/login";
 };
 
+
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
 
@@ -26,10 +27,6 @@ function Navbar() {
   const location = useLocation();
   const token = localStorage.getItem("token");
 
-
-  if (location.pathname === "/login" || location.pathname === "/register") {
-    return null;
-  }
 
   const navLinks = [
     { path: "/", label: " FRA Atlas Map", public: true },
