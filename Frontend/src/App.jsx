@@ -51,11 +51,6 @@ function Navbar() {
 
           <div className="flex items-center gap-2">
             {navLinks.map((link) => {
-
-              // Show public links to everyone, private links only to authenticated users
-
-              if (!link.public && !token) return null;
-
               const isActive = location.pathname === link.path;
 
               return (
