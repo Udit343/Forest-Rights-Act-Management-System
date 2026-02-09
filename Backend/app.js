@@ -19,7 +19,7 @@ const app=express();
 
 app.use(cors({
     //http://localhost:5173/
-    origin: "http://localhost:5173", // -< React URL
+    origin: "https://forest-rights-act-management-system-1.onrender.com", // -< React URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
