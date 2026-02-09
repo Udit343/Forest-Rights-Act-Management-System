@@ -24,8 +24,6 @@ app.use(cors({
     credentials: true
 }));
 
-https://forest-rights-act-management-system-1.onrender.com
-
 app.use(express.json({limit:"40kb"}));
 app.use(express.urlencoded({limit:"40kb", extended: true}));
 

@@ -29,11 +29,11 @@ function Navbar() {
 
 
   const navLinks = [
-    { path: "/", label: " FRA Atlas Map", public: true },
-    { path: "/Veryfy", label: " Planning & Development", public: false },
-    { path: "/forest-revenue", label: " Forest & Revenue", public: false },
-    { path: "/allocated-pattas", label: " Allocated Pattas", public: true },
-    { path: "/claimform", label: "NGO Claim Form", public: false },
+    { path: "/", label: " FRA Atlas Map" },
+    { path: "/Veryfy", label: " Planning & Development"},
+    { path: "/forest-revenue", label: " Forest & Revenue"},
+    { path: "/allocated-pattas", label: " Allocated Pattas" },
+    { path: "/claimform", label: "NGO Claim Form"},
   ];
 
   return (
