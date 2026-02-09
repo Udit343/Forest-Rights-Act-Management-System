@@ -19,10 +19,12 @@ const app=express();
 
 app.use(cors({
     //http://localhost:5173/
-    origin: "https://forest-rights-act-management-system.onrender.com", // -< React URL
+    origin: "https://forest-rights-act-management-system-1.onrender.com", // -< React URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
+
+https://forest-rights-act-management-system-1.onrender.com
 
 app.use(express.json({limit:"40kb"}));
 app.use(express.urlencoded({limit:"40kb", extended: true}));
@@ -34,9 +36,9 @@ app.use("/api/v1/socio",socioRoute);
 
 app.set("port", (process.env.PORT || 8000));
 
-app.get("/", (req,res)=>{
-    return res.json({"Hello":"world"});
-})
+// app.get("/", (req,res)=>{
+//     return res.json({"Hello":"world"});
+// })
 
 const start=async()=>{
 try{
