@@ -34,7 +34,7 @@ app.use("/api/v1/socio",socioRoute);
 
 
 
-// app.set("port", (process.env.PORT || 8000));
+app.set("port", (process.env.PORT || 8000));
 
 
 
