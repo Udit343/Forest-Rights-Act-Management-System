@@ -12,9 +12,6 @@ import claimsRoute from "./src/routes/claims.route.js";
 import pattaRoute from "./src/routes/patta.route.js";
 import socioRoute from "./src/routes/socioeconomic.route.js";
 
-import path from "path";
-import { fileURLToPath } from "url";
-
 const app=express();
 
 
@@ -37,19 +34,10 @@ app.use("/api/v1/socio",socioRoute);
 
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// app.set("port", (process.env.PORT || 8000));
 
 
-app.use(express.static(path.join(__dirname, "dist")));
 
-
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
-
-
-app.set("port", (process.env.PORT || 8000));
 
 // app.get("/", (req,res)=>{
 //     return res.json({"Hello":"world"});
