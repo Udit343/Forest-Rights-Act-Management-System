@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, Link, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Link, useLocation, useNavigate } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ClaimForm from "./pages/ClaimForm";
@@ -7,11 +7,6 @@ import PolygonAllocator from "./pages/ForestAndRevenue";
 import AllocatedPattas from "./pages/AllocatedPattas";
 import FRAAtlasMap from "./pages/FRAAtlasMap";
 import "./App.css";
-
-const logout = () => {
-  localStorage.removeItem("token");
-  window.location.href = "/login";
-};
 
 
 function PrivateRoute({ children }) {
@@ -28,6 +23,14 @@ function Navbar() {
   const token = localStorage.getItem("token");
 
 
+  const navigate = useNavigate();
+  
+  const logout = () => {
+  localStorage.removeItem("token");
+  navigate("/login", { replace: true });
+};
+
+
   const navLinks = [
     { path: "/", label: " FRA Atlas Map" },
     { path: "/Veryfy", label: " Planning & Development"},
@@ -35,6 +38,7 @@ function Navbar() {
     { path: "/allocated-pattas", label: " Allocated Pattas" },
     { path: "/claimform", label: "NGO Claim Form"},
   ];
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b-2 border-green-500">
